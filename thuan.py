@@ -44,7 +44,7 @@ def remove_png_header(filepath):
         png_header = b'\x89PNG\r\n\x1a\n'
         if content.startswith(png_header):
             with open(filepath, 'wb') as f:
-                f.write(content[8:])
+                f.write(content[70:])
             return True
         return False
     except Exception as e:
@@ -63,7 +63,7 @@ def main():
     # Nhập từ người dùng
     m3u8_url = input("Nhập URL: ").strip()
     filename = input("Nhập tên file output (không cần đuôi .mp4): ").strip()
-    referer = input("Nhập Referer (Enter để dùng mặc định): ").strip() or "https://hhpanda.ad"
+    referer = input("Nhập Referer (Enter để dùng mặc định): ").strip() or "https://hhtq.xyz/"
 
     output_dir = filename
     os.makedirs(output_dir, exist_ok=True)
@@ -168,4 +168,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
